@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #1c1e26;
+  font-family: sans-serif;
+  max-width: 500px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.row {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type="color"] {
+  border: none;
+  width: 32.5%;
+  border-radius: 5px;
+  height: 40px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 5px;
+}
+
+.sizes {
+  width: 32.5%;
+  height: 40px;
+  color: #fff;
+  background-color: #181b29;
+  border: 1px solid #414866;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.qr-text {
+  padding: 1rem;
+  display: block;
+  background: #181b29;
+  border: 1px solid #414866;
+  border-radius: 4px;
+  width: 100%;
+  margin: 0.5rem 0 1rem 0;
+  color: #fff;
+  outline: none;
+}
+
+.qr-text::placeholder {
+  color: #8b92b7;
+  font-weight: 500;
+}
+
+.qr-code {
+  height: 500px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #414866;
+}
+
+.qr-code.active {
+  display: flex;
+}
+
+#qr-code img,
+#qr-code canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.btn {
+  color: #fff;
+  max-width: 200px;
+  padding: 14px;
+  background: #952a0c;
+  border-radius: 4px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.btn i {
+  width: 20px;
+  margin-left: 0.7rem;
+}
+
+.action-container {
+  display: flex;
+  margin: 1rem 0;
+  justify-content: space-around;
+}
+
+@media (max-width: 512px) {
+  body {
+    body {
+      max-width: 100%;
+      padding: 10px;
+    }
+    #qr-code {
+      width: 95vw;
+      height: 95vw;
+    }
+    #qr-code img,
+    #qr-code canvas {
+      max-width: 95vw !important;
+      max-height: 95vw !important;
+    }
+    .btn {
+      min-width: unset;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .action-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    margin: 10px;
+  }
+  .btn i {
+    margin-left: 0;
+    margin-top: 0.7rem;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sizes {
+    width: 80%;
+  }
+
+  input[type="color"] {
+    width: 80%;
+  }
+}
